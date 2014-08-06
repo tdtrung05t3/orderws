@@ -3,7 +3,6 @@ package org.service;
 import org.model.Order;
 import org.model.OrderType;
 
-
 public class Validator {
 	
 	public boolean isOrder(Order order) {
@@ -51,5 +50,4 @@ public class Validator {
 		}
 		return false;
 	}
-
 }

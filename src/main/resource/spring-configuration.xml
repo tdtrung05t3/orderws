@@ -10,7 +10,12 @@
        http://www.springframework.org/schema/context  http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 	
 	<context:annotation-config />
-	<context:property-placeholder location="/WEB-INF/config.properties" />
-<!-- 	<import resource="spring-dao.xml"/>
-	<import resource="spring-datasource.xml"/> -->
+	<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+	   <property name="locations">
+            <list>
+                <value>classpath:configure.properties</value>
+                <value>classpath:log4j.properties</value>
+            </list>
+        </property>
+	</bean>
 </beans>

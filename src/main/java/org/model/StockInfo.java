@@ -2,25 +2,30 @@ package org.model;
 
 public class StockInfo {
 	private String symbol;
-	private String ceilingPrice;
-	private String floorPrice;
+	private double ceilingPrice;
+	private double floorPrice;
 	
 	public String getSymbol() {
 		return symbol;
 	}
+	
 	public void setSymbol(String symbol) {
 		this.symbol = symbol;
 	}
-	public String getCeilingPrice() {
+
+	public double getCeilingPrice() {
 		return ceilingPrice;
 	}
-	public void setCeilingPrice(String ceilingPrice) {
+
+	public void setCeilingPrice(double ceilingPrice) {
 		this.ceilingPrice = ceilingPrice;
 	}
-	public String getFloorPrice() {
+
+	public double getFloorPrice() {
 		return floorPrice;
 	}
-	public void setFloorPrice(String floorPrice) {
+
+	public void setFloorPrice(double floorPrice) {
 		this.floorPrice = floorPrice;
 	}
 }
