@@ -14,15 +14,15 @@ import org.model.Order;
 @Path("/orderservice")
 public class OrderService {
 
-	private MockApplicationListener mockApp = new MockApplicationListener();
+	private MockApplicationListener mockApp;
+	{
+		mockApp = new MockApplicationListener();
+	}
 	
 	private Validator validator;
 	
 	private OrderCacheImpl orderCache;
 	
-	{
-		mockApp.setup();
-	}
 	
 	public void setOrderCache(OrderCacheImpl orderCache) {
 		this.orderCache = orderCache;
