@@ -1,5 +1,7 @@
 package org.service;
 
+import java.util.List;
+
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.QueryParam;
@@ -19,7 +21,7 @@ public class OrderService {
 	private OrderCacheImpl orderCache;
 	
 	{
-		mockApp.init();
+		mockApp.setup();
 	}
 	
 	public void setOrderCache(OrderCacheImpl orderCache) {
@@ -101,21 +103,21 @@ public class OrderService {
 	}
 	
 	@GET
-	@Path("top10order/")
-	public Response top10Order() {
+	@Path("toporder/")
+	public Response topOrder() {
 		if (!mockApp.isMaster()) {
 			return Response.status(404).build();
 		}
-		orderCache.getTopOrder();
-		return Response.status(200).entity("top10order").build();
+		List<Order> listOrder = orderCache.getTopOrder();
+		return Response.status(200).entity(listOrder).build();
 	}
 	
 	@GET
-	@Path("top10account/")
-	public Response top10Account() {
+	@Path("topaccount/")
+	public Response topAccount() {
 		if (!mockApp.isMaster()) {
 			return Response.status(404).build();
 		}
-		return Response.status(200).entity("top10account").build();
+		return Response.status(200).entity("topaccount").build();
 	}
 }

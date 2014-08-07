@@ -13,7 +13,7 @@ public class MockApplicationListener implements ApplicationListener {
 	public MockApplicationListener() {
 	}
 	
-	public void init() {
+	public void setup() {
 		app = new Application(zooKeeperAddr, master);
 		app.registListener(this);
 		app.start();
